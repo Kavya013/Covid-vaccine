@@ -14,7 +14,7 @@ function Home() {
             return;
         }
 
-        axios.post('http://localhost:8081/bookVaccinationCenter', { id: centerId })
+        axios.post('https://covid-vaccine-booking-5beb.onrender.com/bookVaccinationCenter', { id: centerId })
             .then((response) => {
                 if (response.data.success) {
                     window.alert('Booking successful! You have successfully booked a slot:)');
@@ -28,7 +28,7 @@ function Home() {
     };
 
     useEffect(() => {
-        axios.get('http://localhost:8081/getVaccinationCenters')
+        axios.get('https://covid-vaccine-booking-5beb.onrender.com/getVaccinationCenters')
             .then((response) => {
                 setVaccinationCenters(response.data);
             })
